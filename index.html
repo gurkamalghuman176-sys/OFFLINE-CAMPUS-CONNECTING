@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>Offline Campus Connect</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Offline Campus Connect</h1>
+      <p class="subtitle">Your resilient student task dashboard. Tasks work seamlessly offline and auto-sync when online.</p>
+      
+      <div class="status-bar">
+        <div id="net-status" class="status-pill status-offline">
+          <span class="status-dot"></span>
+          <span id="net-status-text">🔴 Offline</span>
+        </div>
+        
+        <div id="sync-status" class="status-pill status-syncing">
+          <span id="sync-status-text">✅ All changes synchronized</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Notification / Toast Container for Alerts & Conflict Messages -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <main class="main-content">
+      <section class="card input-section">
+        <h2>Add New Task</h2>
+        <form id="task-form" class="task-form">
+          <input 
+            type="text" 
+            id="task-input" 
+            placeholder="e.g., Submit Assignment 2 before 5 PM..." 
+            autocomplete="off" 
+            required
+          >
+          <button type="submit" id="add-btn" class="btn btn-primary">Add Task</button>
+        </form>
+      </section>
+
+      <section class="card task-section">
+        <div class="section-header">
+          <h2>My Tasks</h2>
+          <span id="task-count" class="badge">0 tasks</span>
+        </div>
+        
+        <ul id="task-list" class="task-list">
+          <!-- Tasks will be dynamically injected here -->
+        </ul>
+        
+        <div id="empty-state" class="empty-state">
+          <p>No tasks found. Add a new task above!</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Offline Campus Connect &copy; 2026 — Built with Vanilla JS & Progressive Web App Tech</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
